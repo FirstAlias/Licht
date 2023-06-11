@@ -47,7 +47,7 @@ Sprite::~Sprite()
 	if (bmp) bmp->Release();
 }
 
-void Sprite::Draw(float opacity, float x, float y)
+void Sprite::Draw(float opacity, float x, float y, float scale)
 {
-	gfx->GetRenderTarget()->DrawBitmap(bmp, D2D1::RectF(x, y, bmp->GetSize().width + x, bmp->GetSize().height + y), opacity, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, D2D1::RectF(0.0f, 0.0f, bmp->GetSize().width, bmp->GetSize().height));
+	gfx->GetRenderTarget()->DrawBitmap(bmp, D2D1::RectF(x, y, (bmp->GetSize().width * scale) + x, (bmp->GetSize().height * scale) + y), opacity, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, D2D1::RectF(0.0f, 0.0f, bmp->GetSize().width, bmp->GetSize().height));
 }

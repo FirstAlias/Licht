@@ -1,5 +1,4 @@
 #pragma once
-
 #include <wincodec.h> // WIC codec header for decoding image from file
 #include "Graphics.h" // Includes windows and d2d1.h
 
@@ -10,10 +9,8 @@ class Sprite
 public:
 	// The constructor reads image files using WIC and converts it into a bitmap
 	Sprite(const wchar_t* path, Graphics* gfx);
-
-	// Destructor
 	~Sprite();
 
 	// Draw the bitmap to the render target
-	void Draw(float opacity, float x, float y);
+	void Draw(float opacity, float x, float y, float scale);
 };
